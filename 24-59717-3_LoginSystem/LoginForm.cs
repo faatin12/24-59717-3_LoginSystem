@@ -90,6 +90,8 @@ namespace LoginSystem
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
                 lblStatus.Text = "Enter both username and password.";
+                MessageBox.Show("Enter both username and password.", "Missing information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -99,10 +101,16 @@ namespace LoginSystem
             {
                 failedAttempts++;
                 lblStatus.Text = $"Invalid username or password. ({failedAttempts}/3)";
+
+                MessageBox.Show($"Invalid username or password. ({failedAttempts}/3 attempts used)",
+                    "Login failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 if (failedAttempts >= 3)
                 {
                     btnLogin.Enabled = false;
                     lblStatus.Text = "Too many failed attempts. Login disabled.";
+                    MessageBox.Show("Too many failed attempts. The Login button has been disabled.",
+                        "Account locked", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 return;
             }

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 
-namespace LoginSystem.InjectionDemo
+namespace _24_59717_3_LoginSystem.InjectionDemo
 {
     public static class VulnerableLoginDemo
     {

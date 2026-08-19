@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace LoginSystem
+namespace LoginSystem   //login form
 {
     public class LoginForm : Form
     {
